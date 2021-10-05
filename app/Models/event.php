@@ -4,11 +4,25 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use app\Models\people;
+use app\Models\People;
 
-class event extends Model
+class Event extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'street',
+        'number',
+        'country',
+        'state',
+        'date',
+        'duration',
+        'is_public',
+        'price',
+        'description',
+        'organizer',
+    ];
 
     public function people()
     {

@@ -16,11 +16,17 @@ class CreatePeopleTable extends Migration
         Schema::create('people', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('surname');
+            $table->timestamps();
+        });
+
+        Schema::create('event_people', function (Blueprint $table) {
+            $table->id();
+            $table->integer('event_id');
+            $table->integer('people_id');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -29,5 +35,6 @@ class CreatePeopleTable extends Migration
     public function down()
     {
         Schema::dropIfExists('people');
+        Schema::dropIfExists('event_people');
     }
 }

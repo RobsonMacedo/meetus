@@ -4,21 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use app\Models\Event;
 use app\Models\Contact;
 
-class People extends Model
+class ContactType extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'surname'];
+    protected $fillable = ['description'];
 
-    public function event()
-    {
-        $this->belongsToMany(Event::class);
-    }
-
-    public function contact()
+    public function contacts()
     {
         $this->hasMany(Contact::class);
     }
