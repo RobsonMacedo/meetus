@@ -28,7 +28,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        dd($request->all());
+        //dump($request->all());
         $request->authenticate();
         // store into people user data
         

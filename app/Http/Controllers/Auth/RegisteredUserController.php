@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Models\People;
 
 class RegisteredUserController extends Controller
 {
@@ -44,6 +45,14 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
+        //verify this
+        $people = People::updateOrCreate([
+            'name' => $request->name,
+            'surname' => $request->name
+        ]);
+
+        $people->save();
 
         event(new Registered($user));
 
