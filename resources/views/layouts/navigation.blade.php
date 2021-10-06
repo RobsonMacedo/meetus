@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a class="underline-none link-dark" href="{{ route('dashboard') }}">
+                    <a class="underline-none link-success" href="{{ route('show-events') }}">
                         <h1><strong>MeetUp</strong></h1>
                     </a>
                 </div>
@@ -13,8 +13,8 @@
                 <!-- Navigation Links -->
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link class="underline-none" :href="route('dashboard')"
-                        :active="request()->routeIs('dashboard')">
+                    <x-nav-link class="underline-none" :href="route('show-events')"
+                        :active="request()->routeIs('show-events')">
                         {{ __('Meus eventos') }}
                     </x-nav-link>
                 </div>
@@ -24,6 +24,20 @@
                     <x-nav-link class="underline-none" :href="route('create-event')"
                         :active="request()->routeIs('create-event')">
                         {{ __('Criar um evento') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link class="underline-none" :href="route('create-event')"
+                        :active="request()->routeIs('create-event')">
+                        {{ __('Minhas anotações') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link class="underline-none" :href="route('create-event')"
+                        :active="request()->routeIs('create-event')">
+                        {{ __('Criar uma anotação') }}
                     </x-nav-link>
                 </div>
 
@@ -83,8 +97,8 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-responsive-nav-link :href="route('show-events')" :active="request()->routeIs('show-events')">
+                {{ __('Meus Eventos') }}
             </x-responsive-nav-link>
         </div>
 

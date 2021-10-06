@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Livewire\Event\Create;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Event\Create as CreateEvent;
+use App\Http\Livewire\People\Create as CreatePeople;
+use App\Http\Livewire\Event\Show as ShowEvent;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +21,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', ShowEvent::class)->middleware(['auth'])->name('show-events');
 
-Route::get('/create-envent', function () {
-    return view('livewire.event.create');
-})->middleware(['auth'])->name('create-event');
+Route::get('/create-event', CreateEvent::class)->middleware(['auth'])->name('create-event');
+
+Route::get('/create-event/create-people', CreatePeople::class)->middleware(['auth'])->name('create-people');
 
 
 require __DIR__.'/auth.php';
