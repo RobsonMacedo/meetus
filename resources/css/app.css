@@ -5,3 +5,7 @@
 .underline-none {
     text-decoration: none;
 }
+
+body {
+  overflow-y: scroll;
+}

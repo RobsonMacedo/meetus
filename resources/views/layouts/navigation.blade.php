@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a class="underline-none" href="{{ route('dashboard') }}">
+                    <a class="underline-none link-dark" href="{{ route('dashboard') }}">
                         <h1><strong>MeetUp</strong></h1>
                     </a>
                 </div>
@@ -21,8 +21,8 @@
 
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link class="underline-none" :href="route('dashboard')"
-                        :active="request()->routeIs('dashboard')">
+                    <x-nav-link class="underline-none" :href="route('create-event')"
+                        :active="request()->routeIs('create-event')">
                         {{ __('Criar um evento') }}
                     </x-nav-link>
                 </div>

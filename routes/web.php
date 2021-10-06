@@ -21,4 +21,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/create-envent', function () {
+    return view('livewire.event.create');
+})->middleware(['auth'])->name('create-event');
+
+
 require __DIR__.'/auth.php';
